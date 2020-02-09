@@ -147,12 +147,12 @@ packages:
     source: hosted
     version: "1.6.4"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.5.1"
+    version: "1.6.0"
   pedantic:
     dependency: transitive
     description:
