@@ -27,6 +27,7 @@ dependencies:
   cached_network_image: ^2.0.0
   sprintf: ^4.0.0
   path_provider: ^1.6.0
+  dio: ^3.0.8
 
   flutter_drag_scale:
     git: https://github.com/LiuC520/flutter_drag_scale.git

@@ -20,6 +20,7 @@ class _HttpRequestExamState extends State<HttpRequestExamRoute> {
       _loading = true;
       setState(() {});
       var httpClient = HttpClient();
+
       var request = await httpClient.getUrl(Uri.parse('https://www.baidu.com'));
       request.headers.add('user-agent',
           'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1');
@@ -44,14 +45,27 @@ class _HttpRequestExamState extends State<HttpRequestExamRoute> {
         appBar: AppBar(
           title: Text('Http测试'),
         ),
-        body: Center(
-          child: FlatButton(
-            child: Text(
-              _text,
-              textAlign: TextAlign.left,
-              softWrap: true,
+        body: ConstrainedBox(
+          constraints: BoxConstraints.expand(),
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('点击获取百度Http'),
+                  onPressed: _loading ? null : _getHttpString,
+                ),
+                Builder(
+                  builder: (context) => Container(
+                    width: MediaQuery.of(context).size.width - 100,
+                    child: Text(
+                      _text,
+                      textAlign: TextAlign.left,
+                      softWrap: true,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            onPressed: _loading ? null : _getHttpString,
           ),
         ),
       ),
